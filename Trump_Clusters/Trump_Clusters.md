@@ -95,7 +95,7 @@ To determine _k_, I frequently use what is commonly referred to as the "elbow" m
 
 ![](Trump_Clusters_files/figure-html/elbow-1.png)<!-- -->
 
-####Running the k-means algorithm
+####Running the k-means algorithm  
 
 ```r
 library(fpc)
@@ -104,7 +104,7 @@ trump_k$size
 ```
 
 ```
-## [1]  547   13 1151   83
+## [1]   83 1151  547   13
 ```
 
 ```r
@@ -112,7 +112,7 @@ trump_k$withinss
 ```
 
 ```
-## [1] 54016346164 33269580971 49653455164 28713489206
+## [1] 28713489206 49653455164 54016346164 33269580971
 ```
 
 ```r
@@ -121,35 +121,35 @@ as.data.frame(aggregate(Republican_Demo, by=list(cluster=trump_k$cluster), FUN=m
 
 ```
 ##   cluster Young_Citizens Old_Citizens Female_Percent White_Percent
-## 1       1       23.24186     16.71207       49.95960      88.51298
-## 2       2       23.56923     14.30000       51.08462      73.63077
-## 3       3       22.46699     18.08758       49.97498      80.63067
-## 4       4       23.02771     15.28916       50.89759      77.50482
+## 1       1       23.02771     15.28916       50.89759      77.50482
+## 2       2       22.46699     18.08758       49.97498      80.63067
+## 3       3       23.24186     16.71207       49.95960      88.51298
+## 4       4       23.56923     14.30000       51.08462      73.63077
 ##   AfricanAmerican_Percent AmericanIndian_Percent Asians_Percent
-## 1                 7.41298              1.0458867       1.163071
-## 2                18.00000              1.1923077       4.592308
-## 3                15.28123              1.6771503       0.657689
-## 4                15.44337              0.9012048       3.571084
+## 1                15.44337              0.9012048       3.571084
+## 2                15.28123              1.6771503       0.657689
+## 3                 7.41298              1.0458867       1.163071
+## 4                18.00000              1.1923077       4.592308
 ##   HawaiianPacific_Percent HispanicLatino_Percent ForeignBorn_Percent
-## 1              0.09616088               9.954113            4.587569
-## 2              0.18461538              27.900000           17.276923
-## 3              0.07506516               8.470895            3.355430
-## 4              0.16867470              13.474699            9.601205
+## 1              0.16867470              13.474699            9.601205
+## 2              0.07506516               8.470895            3.355430
+## 3              0.09616088               9.954113            4.587569
+## 4              0.18461538              27.900000           17.276923
 ##   HighSchoolGrad_Percent BachDegreeHigher_Percent   Veterans
-## 1               86.64168                 21.94004   4717.366
-## 2               84.90000                 27.80769 126535.154
-## 3               79.44648                 14.46560   2543.768
-## 4               88.37952                 29.38554  35968.337
+## 1               88.37952                 29.38554  35968.337
+## 2               79.44648                 14.46560   2543.768
+## 3               86.64168                 21.94004   4717.366
+## 4               84.90000                 27.80769 126535.154
 ##   HomeOwner_Rate PerCapitaIncome MedianHouseholdInc PovertyLevel_Percent
-## 1       74.71188        25996.28           53154.21             12.66380
-## 2       61.57692        27069.31           50016.46             17.11538
-## 3       72.38836        19492.36           36947.75             21.51703
-## 4       67.31566        27933.35           54815.96             14.28193
+## 1       67.31566        27933.35           54815.96             14.28193
+## 2       72.38836        19492.36           36947.75             21.51703
+## 3       74.71188        25996.28           53154.21             12.66380
+## 4       61.57692        27069.31           50016.46             17.11538
 ##   Population_Density winnerDonald Trump winnerTed Cruz
-## 1          119.11207          0.5319927      0.4680073
-## 2         1549.45385          0.6923077      0.3076923
-## 3           62.77706          0.7428323      0.2571677
-## 4          779.41687          0.7228916      0.2771084
+## 1          779.41687          0.7228916      0.2771084
+## 2           62.77706          0.7428323      0.2571677
+## 3          119.11207          0.5319927      0.4680073
+## 4         1549.45385          0.6923077      0.3076923
 ```
 
 ```r
@@ -158,10 +158,10 @@ Republican_Demo$clustname <- trump_k$cluster
 Republican_Demo$clustname <- factor(Republican_Demo$clustname)
 ```
 
-####Plotting the 4 clusters
+####Plotting the 4 clusters  
 ![](Trump_Clusters_files/figure-html/clusters-1.png)<!-- -->
 
-####Counties won in each cluster by Donald Trump
+####Counties won in each cluster by Donald Trump  
 ![](Trump_Clusters_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 ####Findings and Interpretations  
